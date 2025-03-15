@@ -1,9 +1,10 @@
 export interface User {
     id: number;
-    name: string;
-    address?: string;
-    priv?: number;
     email: string;
+    name: string;
+    address: string;
+    priv: number;
+    created_at: string;
   }
   
   export interface Privilege {
@@ -13,14 +14,15 @@ export interface User {
   
   export interface Package {
     id: number;
-    created_at: string; // ISO timestamp
-    sid?: number;
+    sid: number;
     rname: string;
     raddress: string;
     weight: number;
-    method?: number;
-    cpw?: number;
-    status?: number;
+    method: number;
+    cpw: number;
+    status: number;
+    created_at: string;
+    User?: User;
   }
   
   export interface Status {
@@ -30,8 +32,8 @@ export interface User {
   
   export interface MethodType {
     id: number;
-    fee: number;
     type: string;
+    fee: number;
   }
   
   export interface SupabaseUser {
